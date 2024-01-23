@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GURU2_22_Memorite</string>
+
+    <string-array name="sorting">
+        <item>날짜 순</item>
+        <item>이름 순</item>
+    </string-array>
+    <string-array name="filtering">
+        <item>전체</item>
+        <item>책</item>
+        <item>영화</item>
+        <item>드라마</item>
+    </string-array>
+
 </resources>
