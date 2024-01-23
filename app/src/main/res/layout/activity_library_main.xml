@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Spinner
+        android:id="@+id/sorting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Spinner
+        android:id="@+id/filtering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sorting"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/filtering"
+        android:layout_marginTop="16dp">
+
+        <TableLayout
+            android:id="@+id/bookShelfTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="16dp"
+            android:stretchColumns="*">
+
+            <!-- 표의 첫 번째 행은 빈 책장 모양의 ImageView로 구성 -->
+            <TableRow
+                android:id="@+id/firstRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top">
+
+                <!-- 빈 책장 모양의 ImageView 또는 다른 뷰를 추가 -->
+                <Button
+                    android:id="@+id/bookShelf1"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:tag="1"
+                    android:text="버튼 1"
+                    android:onClick="onBookShelfButtonClick"/>
+                <Button
+                    android:id="@+id/bookShelf2"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:tag="2"
+                    android:text="버튼 2"
+                    android:onClick="onBookShelfButtonClick"/>
+                <Button
+                    android:id="@+id/additionalBookShelf"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:text="추가 버튼"
+                    android:visibility="gone"
+                    android:onClick="onAdditionalBookShelfButtonClick"/>
+            </TableRow>
+
+            <!-- 나머지 행들은 동적으로 추가될 예정 -->
+
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>
