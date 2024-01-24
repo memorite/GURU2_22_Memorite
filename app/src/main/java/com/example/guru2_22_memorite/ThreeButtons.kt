@@ -2,11 +2,36 @@ package com.example.guru2_22_memorite
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guru2_22_memorite.R
+import library_main
 
 class ThreeButtons : AppCompatActivity() {
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.library_main_menu, menu)
+        return true
+    }
+    // 인아님 캘린더 페이지 이름이랑 연결해서 menu item 클릭하면 화면 전환되도록.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.action_library -> {
+                val intent = Intent(this, library_main::class.java)
+                startActivity(intent)
+                return true
+            }
+//            R.id.action_calendar -> {
+//                val intent = Intent(this, calendar_main::class.java) //인아님 페이지(캘린더 페이지 이름으로 변경)
+//                startActivity(intent)
+//                return true
+//            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_three_buttons)
