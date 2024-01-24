@@ -6,30 +6,30 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <Spinner
-        android:id="@+id/sorting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp" />
+<!--    <Spinner-->
+<!--        android:id="@+id/sorting"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp" />-->
 
     <Spinner
         android:id="@+id/filtering"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sorting"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp" />
+    <!--        android:layout_below="@id/sorting"-->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/filtering"
-        android:layout_marginTop="16dp">
+        android:layout_margin="16dp">
 
         <TableLayout
             android:id="@+id/bookShelfTable"
@@ -52,21 +52,22 @@
                     android:layout_width="80dp"
                     android:layout_height="120dp"
                     android:tag="1"
-                    android:text="버튼 1"
+                    android:text="+"
                     android:onClick="onBookShelfButtonClick"/>
                 <Button
                     android:id="@+id/bookShelf2"
                     android:layout_width="80dp"
                     android:layout_height="120dp"
                     android:tag="2"
-                    android:text="버튼 2"
+                    android:text="+"
+                    android:visibility="invisible"
                     android:onClick="onBookShelfButtonClick"/>
                 <Button
                     android:id="@+id/additionalBookShelf"
                     android:layout_width="80dp"
                     android:layout_height="120dp"
                     android:text="추가 버튼"
-                    android:visibility="gone"
+                    android:visibility="invisible"
                     android:onClick="onAdditionalBookShelfButtonClick"/>
             </TableRow>
 
