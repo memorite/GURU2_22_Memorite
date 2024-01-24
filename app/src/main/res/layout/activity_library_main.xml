@@ -25,10 +25,23 @@
         android:layout_marginEnd="16dp" />
     <!--        android:layout_below="@id/sorting"-->
 
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filtering"
+        android:layout_margin="16dp"
+        android:hint="검색"
+        android:padding="10dp"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:background="@android:color/background_light"
+        android:textColor="@android:color/black"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/filtering"
+        android:layout_below="@id/searchEditText"
         android:layout_margin="16dp">
 
         <TableLayout
