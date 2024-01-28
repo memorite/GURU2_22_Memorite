@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GURU2_22_Memorite"
         tools:targetApi="31">
         <activity
+            android:name=".DramaCalendar"
+            android:exported="false" />
+        <activity
+            android:name=".MovieCalendar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

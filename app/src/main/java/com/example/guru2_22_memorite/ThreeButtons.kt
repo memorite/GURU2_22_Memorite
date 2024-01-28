@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.guru2_22_memorite.R
 import library_main
 
 class ThreeButtons : AppCompatActivity() {
@@ -57,7 +56,7 @@ class ThreeButtons : AppCompatActivity() {
 
     //시영님이 만드신 감상평 3가지 페이지로 각각 연결하는 코드.
     private fun openBookActivity() {
-        val intent = Intent(this, BookActivity::class.java)
+        val intent = Intent(this, BookCalendar::class.java)
         startActivity(intent)
     }
 
