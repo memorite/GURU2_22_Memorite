@@ -1,5 +1,6 @@
 package com.example.guru2_22_memorite
 
+<<<<<<< HEAD
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -15,12 +16,18 @@ data class Book(
     var rating: Double = 0.0,
     var memo: String = ""
 ) : Serializable
+=======
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
+>>>>>>> origin/master
 
 class DBManager(
     context: Context?,
     name: String?,
     factory: SQLiteDatabase.CursorFactory?,
     version: Int
+<<<<<<< HEAD
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("CREATE TABLE Book (title Text, author Text, publisher Text, rating Text, memo Text)")
@@ -116,4 +123,13 @@ class DBManager(
         db.close()
         return result > 0
     }
+=======
+) : SQLiteOpenHelper(context, name, factory, version){
+    override fun onCreate(db: SQLiteDatabase?) {
+        db!!.execSQL("CREATE TABLE userList (id text primary key, password text, nickname text, email text)")
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+    }
+>>>>>>> origin/master
 }

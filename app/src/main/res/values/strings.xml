@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">GURU2_22_Memorite</string>
+    <string name="title">Memorite</string>
+    <string name="login_title">Memorite</string>
+    <string name="login_id">아이디</string>
+    <string name="login_password">비밀번호</string>
+    <string name="login_button">로그인</string>
+    <string name="login_save_checkbox">로그인 상태 유지</string>
+    <string name="login_register_ask_text">아직 회원이 아니신가요?</string>
+    <string name="login_register_button"><u>회원가입</u></string>
+    <string name="memberReg_title">회원가입</string>
+    <string name="memberReg_idCheck"><u>ID 중복확인</u></string>
+    <string name="memberReg_nickname">별명</string>
+    <string name="memberReg_email">이메일</string>
+    <string name="memberReg_toLogin">로그인으로</string>
 
     <!--    <string-array name="sorting">-->
     <!--        <item>날짜 순</item>-->
