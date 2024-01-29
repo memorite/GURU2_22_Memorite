@@ -6,4 +6,6 @@
     </style>
 
     <style name="Theme.GURU2_22_Memorite" parent="Base.Theme.GURU2_22_Memorite" />
+
+    <style name="Theme.GURU2_22_Memorite.noActionBar" parent="Theme.Material3.DayNight.NoActionBar"/>
 </resources>
