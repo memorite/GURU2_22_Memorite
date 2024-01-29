@@ -45,8 +45,11 @@ class LoginActivity : AppCompatActivity() {
             sqlitedb = dbManager.readableDatabase
             var cursor: Cursor
             cursor = sqlitedb.rawQuery("SELECT password FROM userList where id = '" + login_id + "';", null)
-            cursor.moveToFirst()
-            var data_pw = cursor.getString(cursor.getColumnIndex("password")).toString()
+            var data_pw: String=""
+            if( cursor != null && cursor.moveToFirst()){
+                data_pw = cursor.getString(cursor.getColumnIndex("password")).toString()
+                cursor.close()
+            }
 
             if(data_pw.equals(login_pw)){
                 // 일치할 경우 로그인
@@ -70,7 +73,6 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "id 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
             }
 
-            cursor.close()
             sqlitedb.close()
         }
 
