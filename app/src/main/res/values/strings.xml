@@ -13,4 +13,20 @@
     <string name="memberReg_nickname">별명</string>
     <string name="memberReg_email">이메일</string>
     <string name="memberReg_toLogin">로그인으로</string>
+
+    <!--    <string-array name="sorting">-->
+    <!--        <item>날짜 순</item>-->
+    <!--        <item>이름 순</item>-->
+    <!--    </string-array>-->
+    <string-array name="filtering">
+        <item>전체</item>
+        <item>책</item>
+        <item>영화</item>
+        <item>드라마</item>
+    </string-array>
+
+    <string name="action_library">목록</string>
+    <string name="action_calendar">캘린더</string>
+
+
 </resources>

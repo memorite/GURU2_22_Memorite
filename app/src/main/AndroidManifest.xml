@@ -19,6 +19,12 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".DramaCalendar"
+            android:exported="false" />
+        <activity
+            android:name=".MovieCalendar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
