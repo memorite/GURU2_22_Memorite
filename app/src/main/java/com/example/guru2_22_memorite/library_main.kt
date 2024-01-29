@@ -11,7 +11,6 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guru2_22_memorite.R
-import com.example.guru2_22_memorite.ThreeButtons
 
 class library_main : AppCompatActivity() {
     private var nextCellIndex = 1

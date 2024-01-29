@@ -17,13 +17,15 @@ class MovieEdit : AppCompatActivity() {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
-    private lateinit var edit_movie_title: EditText
-    private lateinit var edit_movie_direc: EditText
-    private lateinit var edit_movie_actor: EditText
-    private lateinit var edit_ratingBar: RatingBar
-    private lateinit var edit_memo: EditText
-    private lateinit var edit_save: Button
+    lateinit var edit_date: EditText
+    lateinit var edit_movie_title: EditText
+    lateinit var edit_movie_direc: EditText
+    lateinit var edit_movie_actor: EditText
+    lateinit var edit_ratingBar: RatingBar
+    lateinit var edit_memo: EditText
+    lateinit var edit_save: Button
 
+    lateinit var str_date: String
     lateinit var str_movie_title: String
     lateinit var str_movie_direc: String
     lateinit var str_movie_actor: String
@@ -34,6 +36,7 @@ class MovieEdit : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_edit)
 
+        edit_date = findViewById(R.id.edit_date)
         edit_movie_title = findViewById(R.id.edit_movie_title)
         edit_movie_direc = findViewById(R.id.edit_movie_direc)
         edit_movie_actor = findViewById(R.id.edit_movie_actor)
@@ -41,7 +44,7 @@ class MovieEdit : AppCompatActivity() {
         edit_memo = findViewById(R.id.edit_memo)
         edit_save = findViewById(R.id.edit_save)
 
-        // DramaInfo에서 전달받은 도서 정보
+        // MovieInfo에서 전달받은 영화정보
         val intent = intent
         str_movie_title = intent.getStringExtra("intent_title").toString()
 
@@ -51,6 +54,7 @@ class MovieEdit : AppCompatActivity() {
         var cursor: Cursor
         cursor = sqlitedb.rawQuery("SELECT * FROM Movie WHERE title = ?", arrayOf(str_movie_title))
         if (cursor.moveToNext()) {
+            str_date = cursor.getString((cursor.getColumnIndex("date"))).toString()
             str_movie_direc = cursor.getString((cursor.getColumnIndex("direc"))).toString()
             str_movie_actor = cursor.getString((cursor.getColumnIndex("actor"))).toString()
             rating_value = cursor.getDouble((cursor.getColumnIndex("rating")))
@@ -61,6 +65,7 @@ class MovieEdit : AppCompatActivity() {
         dbManager.close()
 
         // 영화 정보를 EditText에 설정
+        edit_date.setText(str_date)
         edit_movie_title.setText(str_movie_title)
         edit_movie_direc.setText(str_movie_direc)
         edit_movie_actor.setText(str_movie_actor)
@@ -76,6 +81,7 @@ class MovieEdit : AppCompatActivity() {
     }
 
     private fun saveMovieInfo() {
+        val newDate = edit_date.text.toString()
         val newMovieTitle = edit_movie_title.text.toString()
         val newDirec = edit_movie_direc.text.toString()
         val newActor = edit_movie_actor.text.toString()
@@ -84,6 +90,7 @@ class MovieEdit : AppCompatActivity() {
 
         // DB에 수정된 정보 업데이트
         val contentValues = ContentValues().apply {
+            put("date", newDate)
             put("title", newMovieTitle)
             put("direc", newDirec)
             put("actor", newActor)
