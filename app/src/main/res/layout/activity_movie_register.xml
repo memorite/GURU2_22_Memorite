@@ -8,7 +8,7 @@
     android:paddingLeft="20dp"
     android:paddingTop="20dp"
     android:paddingRight="20dp"
-    tools:context=".DramaActivity">
+    tools:context=".MovieRegister">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,39 +16,39 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/bookImage"
-                android:layout_width="120dp"
-                android:layout_height="190dp"
-                android:backgroundTint="#F8F8F8"
-                android:clickable="true"
-                android:scaleType="centerInside"
-                android:scaleX="0.5"
-                android:scaleY="0.5"
-                android:src="@drawable/addphoto" />
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/reg_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:singleLine="false"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:imeOptions="actionNext"
+                        android:textSize="14sp"
+                        android:hint="날짜를 선택하세요"/>
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="70sp"
+                    android:layout_width="60sp"
                     android:layout_height="wrap_content"
-                    android:text="드라마 제목"
+                    android:text="영화 제목"
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/reg_drama_title"
+                    android:id="@+id/reg_movie_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -75,7 +75,7 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/reg_drama_direc"
+                    android:id="@+id/reg_movie_direc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -101,7 +101,7 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/reg_drama_actor"
+                    android:id="@+id/reg_movie_actor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"

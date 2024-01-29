@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GURU2_22_Memorite"
         tools:targetApi="31">
+
         <activity
             android:name=".LodingActivity"
             android:exported="true">
@@ -28,34 +29,16 @@
             android:name=".MemberRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".DramaEdit"
+            android:name=".MovieRegister"
             android:exported="false" />
         <activity
             android:name=".MovieEdit"
             android:exported="false" />
         <activity
-            android:name=".BookEdit"
-            android:exported="false" />
-        <activity
             android:name=".MovieInfo"
             android:exported="false" />
         <activity
-            android:name=".DramaInfo"
-            android:exported="false" />
-        <activity
-            android:name=".BookInfo"
-            android:exported="false" />
-        <activity
             android:name=".DBManager"
-            android:exported="false" />
-        <activity
-            android:name=".DramaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MovieActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BookActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

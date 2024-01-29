@@ -21,7 +21,7 @@ class MovieCalendar : AppCompatActivity() {
         SelectButton = findViewById<Button>(R.id.SelectButton)
 
         SelectButton.setOnClickListener {
-            val intent = Intent(this, MovieActivity::class.java)
+            val intent = Intent(this, MovieRegister::class.java)
             startActivity(intent)
         }
     }
