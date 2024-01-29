@@ -48,17 +48,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LogText" />
 
-    <TextView
-        android:id="@+id/LogComment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#DDDDDD"
-        android:ems="10"
-        android:gravity="start|center_vertical"
-        android:padding="7sp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="481dp"
-        tools:ignore="MissingConstraints" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
