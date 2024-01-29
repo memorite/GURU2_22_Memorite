@@ -43,6 +43,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".MovieCalendar"
+            android:exported="false" />
     </application>
 
 </manifest>
