@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
             if(data_pw.equals(login_pw)){
                 // 일치할 경우 로그인
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MovieCalendar::class.java)
                 intent.putExtra("id", login_id)
 
                 // 로그인 저장이 체크되었을 경우 로그인 정보 저장

@@ -32,7 +32,7 @@ class LodingActivity : AppCompatActivity() {
                 var pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
                 var editor = pref.edit()
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MovieCalendar::class.java)
                 var loginedID = pref.getString("KEY_MEMORITE_ID", "")
                 intent.putExtra("id", loginedID)
                 startActivity(intent)

@@ -13,6 +13,21 @@
         android:theme="@style/Theme.GURU2_22_Memorite"
         tools:targetApi="31">
         <activity
+            android:name=".LodingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MemberRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".DramaEdit"
             android:exported="false" />
         <activity
@@ -44,13 +59,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

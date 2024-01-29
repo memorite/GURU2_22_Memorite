@@ -21,7 +21,7 @@ class MovieCalendar : AppCompatActivity() {
         SelectButton = findViewById<Button>(R.id.SelectButton)
 
         SelectButton.setOnClickListener {
-            val intent = Intent(this,// 영화 기록 페이지 ::class.java)
+            val intent = Intent(this, MovieActivity::class.java)
             startActivity(intent)
         }
     }
@@ -35,12 +35,12 @@ class MovieCalendar : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
             R.id.action_book -> {
-                val intent = Intent (this, // 책 기록 페이지::class.java)
+                val intent = Intent (this, BookActivity::class.java)
                 startActivity(intent)
                 return true
             }
             R.id.action_drama -> {
-                val intent = Intent (this, // 드라마 기록 페이지::class.java)
+                val intent = Intent (this, DramaActivity::class.java)
                 startActivity(intent)
                 return true
             }
