@@ -89,26 +89,11 @@
                 android:layout_weight="3"
                 android:backgroundTint="@color/white"
                 android:ems="10"
-                android:fontFamily="@font/hssaemaul_regular"
+                android:fontFamily="sans-serif"
                 android:inputType="textPassword"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textSize="30sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/cBoxLoginSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/white"
-                android:text="@string/login_save_checkbox"
-                android:textColor="@color/white" />
         </LinearLayout>
 
         <Button
@@ -116,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/thema_darkgreen"
             android:fontFamily="@font/hssaemaul_regular"
             android:text="@string/login_button"
@@ -129,11 +115,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
 
         <TextView
             android:id="@+id/textView6"

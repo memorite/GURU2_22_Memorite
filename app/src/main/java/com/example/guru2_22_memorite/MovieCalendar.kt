@@ -4,13 +4,17 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.Toast
 
 class MovieCalendar : AppCompatActivity() {
 
     lateinit var SelectButton: Button
+    private var doubleBackToExit = false        // 뒤로가기로 인한 자동 앱 종료 방지용
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,5 +51,22 @@ class MovieCalendar : AppCompatActivity() {
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    // 뒤로가기를 더블클릭 했을 때만 앱이 종료되도록 설정
+    override fun onBackPressed() {
+        if(doubleBackToExit){
+            finishAffinity()
+        } else{
+            Toast.makeText(this, "종료하시려면 뒤로가기를 한번 더 눌러주세요.", Toast.LENGTH_SHORT).show()
+            doubleBackToExit = true
+            runDelayed(1500L){
+                doubleBackToExit = false
+            }
+        }
+    }
+
+    private fun runDelayed(millis: Long, function: () -> Unit) {
+        Handler(Looper.getMainLooper()).postDelayed(function, millis)
     }
 }

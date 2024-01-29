@@ -19,7 +19,6 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var edtID: EditText
     lateinit var edtPassword: EditText
-    lateinit var cBoxLoginSave: CheckBox
     lateinit var btnLogin: Button
     lateinit var btnToRegi: Button
 
@@ -30,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
 
         edtID = findViewById(R.id.edtID)
         edtPassword = findViewById(R.id.edtPassword)
-        cBoxLoginSave = findViewById(R.id.cBoxLoginSave)
         btnLogin = findViewById(R.id.btnLogin)
         btnToRegi = findViewById(R.id.btnToRegi)
 
@@ -56,18 +54,10 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MovieCalendar::class.java)
                 intent.putExtra("id", login_id)
 
-                // 로그인 저장이 체크되었을 경우 로그인 정보 저장
-                if(cBoxLoginSave.isActivated){
-                    var pref = getSharedPreferences("pref", Activity.MODE_PRIVATE)
-                    var editor = pref.edit()
-
-                    editor.putString("KEY_MEMORITE_ID", login_id).apply()
-                    editor.putString("KEY_MEMORITE_PW", login_pw).apply()
-                    editor.putBoolean("KEY_MEMORITE_LOGINSAVE", true).apply()
-                }
-
                 // 메인 액티비티로
                 startActivity(intent)
+                // 이전 키로 로딩화면으로 돌아오는 것 방지
+                finish()
             } else {
                 // 아닐 경우 다시 입력을 유도
                 Toast.makeText(this@LoginActivity, "id 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
