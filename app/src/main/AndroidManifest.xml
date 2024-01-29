@@ -15,7 +15,8 @@
 
         <activity
             android:name=".LodingActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.GURU2_22_Memorite.noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,6 +25,7 @@
 
         <activity
             android:name=".LoginActivity"
+            android:theme="@style/Theme.GURU2_22_Memorite.noActionBar"
             android:exported="false" />
         <activity
             android:name=".MemberRegisterActivity"
