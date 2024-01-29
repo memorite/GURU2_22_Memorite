@@ -14,35 +14,19 @@ import java.util.Calendar
 import java.util.Locale
 
 class MovieCalendar : AppCompatActivity() {
-    private lateinit var dbManager: MovieActivity
+    lateinit var SelectButton: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_calendar)
 
-        dbManager = MovieActivity()
+        // 선택 버튼
+        SelectButton = findViewById<Button>(R.id.SelectButton)
 
-        val calendarView: CalendarView = findViewById(R.id.CalendarView)
-
-        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
-            val date = getDate(year, month, dayOfMonth)
-            val content = getLogContent(date)
-            val intent = Intent(this, MovieActivity::class.java)
-            intent.putExtra("date", date)
-            intent.putExtra("content", content)
+        SelectButton.setOnClickListener {
+            val intent = Intent(this, MovieRegister::class.java)
             startActivity(intent)
         }
-    }
-
-    private fun getDate(year: Int, month: Int, dayOfMonth: Int): String {
-        val calendar = Calendar.getInstance()
-        calendar.set(year, month, dayOfMonth)
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        return sdf.format(calendar.time)
-    }
-
-    private fun getLogContent(date: String): String {
-        return "기록"
     }
 }

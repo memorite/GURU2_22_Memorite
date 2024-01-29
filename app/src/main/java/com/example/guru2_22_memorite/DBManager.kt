@@ -32,7 +32,7 @@ class DBManager(
 
     // 영화 수정
     fun updateMovie(
-        date: String
+        date: String,
         oldTitle: String,
         newTitle: String,
         direc: String,
