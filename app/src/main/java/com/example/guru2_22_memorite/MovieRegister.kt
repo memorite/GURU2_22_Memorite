@@ -81,7 +81,7 @@ class MovieRegister : AppCompatActivity() {
             val contentValues = ContentValues().apply {
                 put("date", str_date)
                 put("title", str_movie_title)
-                put("director", str_direc)
+                put("direc", str_direc)
                 put("actor", str_actor)
                 put("rating", rating_value.toDouble())
                 put("memo",str_memo)

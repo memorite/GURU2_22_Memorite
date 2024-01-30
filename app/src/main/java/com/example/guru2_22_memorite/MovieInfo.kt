@@ -1,5 +1,6 @@
 package com.example.guru2_22_memorite
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -36,6 +37,7 @@ class MovieInfo : AppCompatActivity() {
     var rating_value: Double = 0.0
     lateinit var str_memo: String
 
+    @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_info)
