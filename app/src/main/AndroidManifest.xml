@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GURU2_22_Memorite"
         tools:targetApi="31">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".MovieList"
             android:exported="false" />
         <activity
