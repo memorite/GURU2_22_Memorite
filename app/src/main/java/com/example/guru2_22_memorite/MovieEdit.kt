@@ -1,6 +1,7 @@
 package com.example.guru2_22_memorite
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -9,16 +10,20 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.TextView
 import android.widget.Toast
 import com.example.guru2_22_memorite.DBManager
 import com.example.guru2_22_memorite.R
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class MovieEdit : AppCompatActivity() {
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
-    lateinit var edit_date: EditText
+    lateinit var edit_date: TextView
     lateinit var edit_movie_title: EditText
     lateinit var edit_movie_direc: EditText
     lateinit var edit_movie_actor: EditText
@@ -85,6 +90,28 @@ class MovieEdit : AppCompatActivity() {
             saveMovieInfo()
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
             finish() // 현재 액티비티 종료
+        }
+        // 날짜 입력 부분을 수정하여 캘린더에서 선택한 날짜를 사용하도록 함
+        edit_date.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+
+            val datePicker = DatePickerDialog(
+                this,
+                { _, year, monthOfYear, dayOfMonth ->
+                    val selectedDate = Calendar.getInstance()
+                    selectedDate.set(year, monthOfYear, dayOfMonth)
+
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    edit_date.text = dateFormat.format(selectedDate.time) // 선택한 날짜를 TextView에 표시
+                },
+                year,
+                month,
+                dayOfMonth
+            )
+            datePicker.show()
         }
     }
 
