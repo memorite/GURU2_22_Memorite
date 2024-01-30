@@ -140,7 +140,7 @@ class MovieCalendar : AppCompatActivity() {
 
     private fun updateTextViewBackGround(text: String) {
         if (text.isNotEmpty()) {
-            logTextView.setBackgroundResource(R.color.thema_green)
+            logTextView.setBackgroundResource(R.color.theme_green)
         } else{
             logTextView.setBackgroundResource(android.R.color.transparent)
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/thema_green"
+    android:background="@color/theme_green"
     tools:context=".MemberRegisterActivity">
 
     <TextView
@@ -70,13 +70,15 @@
 
             <Button
                 android:id="@+id/btnIDCheck"
+                style="@style/customButtonStyle"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/nanumsquareround_bold"
                 android:minHeight="20dip"
                 android:text="@string/memberReg_idCheck"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textIDCheck"
@@ -185,20 +187,22 @@
 
             <Button
                 android:id="@+id/btnToLogin"
+                style="@style/customButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/thema_darkgreen"
+                android:backgroundTint="@color/theme_darkgreen"
                 android:fontFamily="@font/nanumsquareround_bold"
                 android:text="@string/memberReg_toLogin" />
 
             <Button
                 android:id="@+id/btnRegi"
+                style="@style/customButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/thema_darkgreen"
+                android:backgroundTint="@color/theme_darkgreen"
                 android:fontFamily="@font/nanumsquareround_bold"
                 android:text="@string/memberReg_title" />
         </LinearLayout>

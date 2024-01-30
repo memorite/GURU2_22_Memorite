@@ -1,16 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.GURU2_22_Memorite" parent="Theme.Material3.DayNight">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.GURU2_22_Memorite" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- 색상 변경 -->
-        <item name="colorPrimaryDark">@color/thema_darkgreen</item>
-        <item name="colorPrimary">@color/thema_green</item>
+        <item name="colorPrimaryDark">@color/theme_darkgreen</item>
+        <item name="colorPrimary">@color/theme_green</item>
 
         <!-- 폰트 변경 -->
         <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
         <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
-        <item name="android:buttonStyle">@style/customButtonStyle</item>
         <item name="android:radioButtonStyle">@style/customRadioButtonFontStyle</item>
         <item name="android:checkboxStyle">@style/customCheckBoxFontStyle</item>
     </style>
@@ -18,7 +15,7 @@
     <style name="Theme.GURU2_22_Memorite" parent="Base.Theme.GURU2_22_Memorite" />
 
     <style name="Theme.GURU2_22_Memorite.noActionBar" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimaryDark">@color/thema_darkgreen</item>
+        <item name="colorPrimaryDark">@color/theme_darkgreen</item>
     </style>
 
     <!--커스텀 폰트 관련-->
@@ -36,8 +33,11 @@
     </style>
 
 
-    <style name="customButtonStyle" parent="Widget.Material3.Button">
+    <style name="customButtonStyle" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:fontFamily">@font/nanumsquareround_bold</item>
-        <item name="backgroundTint">@color/thema_darkgreen</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/custombutton</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/theme_darkgreen</item>
     </style>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/thema_green"
+    android:background="@color/theme_green"
     tools:context=".LoginActivity">
 
     <TextView
@@ -102,12 +102,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:backgroundTint="@color/thema_darkgreen"
+            android:backgroundTint="@color/theme_darkgreen"
             android:fontFamily="@font/hssaemaul_regular"
             android:text="@string/login_button"
             android:textAlignment="center"
             android:textSize="20sp"
-            app:iconTint="@color/thema_darkgreen" />
+            app:iconTint="@color/theme_darkgreen" />
 
     </LinearLayout>
 
