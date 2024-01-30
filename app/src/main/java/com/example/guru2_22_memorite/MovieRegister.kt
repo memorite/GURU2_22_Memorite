@@ -6,6 +6,8 @@ import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
@@ -95,6 +97,27 @@ class MovieRegister : AppCompatActivity() {
             intent.putExtra("intent_title", str_movie_title)
             startActivity(intent)
         }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.register_movie_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_home -> {
+                val intent = Intent(this, MovieCalendar::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.action_list -> {
+                val intent = Intent(this, MovieList::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
