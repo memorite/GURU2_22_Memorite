@@ -23,23 +23,24 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:elevation="8dp"
         android:src="@drawable/plus_logo"
+        app:backgroundTint="@color/thema_darkgreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="8dp"
         app:pressedTranslationZ="12dp" />
 
 
-<!--    <Button-->
-<!--        android:id="@+id/SelectButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginEnd="160dp"-->
-<!--        android:text="선택"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/logTextView"-->
-<!--        tools:ignore="MissingConstraints" />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/SelectButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:layout_marginEnd="160dp"-->
+    <!--        android:text="선택"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/logTextView"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
     <TextView
         android:id="@+id/LogText"
@@ -66,10 +67,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/thema_green"
-        android:text=""
-        android:textSize="30sp"
         android:gravity="center"
         android:padding="8dp"
+        android:text=""
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/CalendarView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/CalendarView"
