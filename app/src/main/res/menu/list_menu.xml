@@ -9,11 +9,12 @@
         android:title="@string/action_home"
         app:showAsAction="always" />
 
+
     <item
-        android:id="@+id/action_list"
+        android:id="@+id/action_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/action_list"
+        android:title="@string/action_search"
         app:showAsAction="always" />
 
 

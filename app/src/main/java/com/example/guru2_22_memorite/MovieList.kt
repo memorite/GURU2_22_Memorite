@@ -17,7 +17,7 @@ import android.widget.TextView
 class MovieList : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.search_menu, menu)
+        menuInflater.inflate(R.menu.list_menu, menu)
         return true
     }
 
@@ -25,6 +25,11 @@ class MovieList : AppCompatActivity() {
         when(item?.itemId) {
             R.id.action_home -> {
                 val intent = Intent(this, MovieCalendar::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_search -> {
+                val intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
                 return true
             }
