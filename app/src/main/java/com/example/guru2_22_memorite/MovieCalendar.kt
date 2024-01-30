@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
 import java.time.Month
@@ -20,7 +21,7 @@ import java.util.Locale
 class MovieCalendar : AppCompatActivity() {
 
     private lateinit var dbManager: DBManager
-    lateinit var SelectButton: Button
+    lateinit var SelectButton: FloatingActionButton
     lateinit var calendarView: CalendarView
     lateinit var logTextView: TextView
 
@@ -32,6 +33,7 @@ class MovieCalendar : AppCompatActivity() {
         dbManager = DBManager(this, "MovieDB", null, 1)
         calendarView = findViewById(R.id.CalendarView)
         logTextView = findViewById(R.id.logTextView)
+        SelectButton = findViewById(R.id.SelectButton)
 
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val selectedDate = getDate(year, month, dayOfMonth)
@@ -39,8 +41,7 @@ class MovieCalendar : AppCompatActivity() {
             logTextView.text = logContent
         }
 
-        val selectButton: Button = findViewById<Button>(R.id.SelectButton)
-        selectButton.setOnClickListener {
+        SelectButton.setOnClickListener {
             val intent = Intent(this, MovieRegister::class.java)
             startActivity(intent)
         }
