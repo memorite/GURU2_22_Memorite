@@ -52,7 +52,6 @@ class MovieInfo : AppCompatActivity() {
     //수정 삭제 버튼
     lateinit var btnEdit: Button
     lateinit var btnDelete: Button
-    lateinit var btnHome: Button
 
     lateinit var str_movie_date: String
     lateinit var str_movie_title: String
@@ -74,7 +73,6 @@ class MovieInfo : AppCompatActivity() {
         tvMemo = findViewById(R.id.reg_memo)
         btnEdit = findViewById(R.id.btnEdit)
         btnDelete = findViewById(R.id.btnDelete)
-        //btnHome = findViewById(R.id.btnHome)
 
         //Intent를 통해 영화정보를 전달 받음
         val intent = intent
@@ -114,10 +112,6 @@ class MovieInfo : AppCompatActivity() {
         btnDelete.setOnClickListener {
             DeleteDialog()
         }
-//        btnHome.setOnClickListener {
-////            val intent = Intent(this, MovieCalendar::class.java)
-////            startActivity(intent)
-////        }
     }
         // 삭제 팝업창
         fun DeleteDialog() {
