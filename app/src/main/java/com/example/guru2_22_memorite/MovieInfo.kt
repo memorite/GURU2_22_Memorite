@@ -104,7 +104,7 @@ class MovieInfo : AppCompatActivity() {
             alertDialogBuilder.setPositiveButton("Yes") { dialog, which ->
                 if (dbManager.deleteMovie(str_movie_title)) {
                     Toast.makeText(this, "삭제되었습니다.", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MovieCalendar::class.java)
+                    val intent = Intent(this, MovieList::class.java)
                     startActivity(intent)
                     finish()
                 }
