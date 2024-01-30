@@ -73,9 +73,12 @@ class MovieCalendar : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
             R.id.action_search -> {
-                val intent = Intent(this, MovieList::class.java)
+                val intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
                 return true
+            }
+            R.id.action_list -> {
+                val intent = Intent(this, MovieList::class.java)
             }
         }
         return super.onOptionsItemSelected(item)
