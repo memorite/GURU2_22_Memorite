@@ -8,13 +8,17 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.RatingBar
 import android.widget.TextView
 
 class MovieList : AppCompatActivity() {
+
+    val theme_darkgreen = Color.parseColor("#72ABA1")
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.list_menu, menu)
@@ -65,28 +69,43 @@ class MovieList : AppCompatActivity() {
             layout_item.orientation = LinearLayout.VERTICAL
             layout_item.id = View.generateViewId()
 
-            Log.d("MovieList", "현재 num: $num")
-
+            //목록 테스트 변경하는 부분
             var tvMovieTitle: TextView = TextView(this)
             tvMovieTitle.text = str_movie_title
             tvMovieTitle.textSize = 30f
-            tvMovieTitle.setBackgroundColor(Color.LTGRAY)
+            tvMovieTitle.setTextColor(Color.WHITE)
+            tvMovieTitle.setBackgroundColor(theme_darkgreen) // 글자 배경색 변경
+            tvMovieTitle.gravity = Gravity.CENTER
             layout_item.addView(tvMovieTitle)
 
             var tvMovieDate : TextView = TextView(this)
             tvMovieDate.text = str_movie_date
+            tvMovieDate.gravity = Gravity.CENTER
             layout_item.addView(tvMovieDate)
 
             var tvMovieDirec: TextView = TextView(this)
             tvMovieDirec.text = str_movie_direc
+            tvMovieDirec.gravity = Gravity.CENTER
             layout_item.addView(tvMovieDirec)
 
             var tvMovieActor: TextView = TextView(this)
             tvMovieActor.text = str_movie_actor
+            tvMovieActor.gravity= Gravity.CENTER
             layout_item.addView(tvMovieActor)
 
-            var tvRatingBar: TextView = TextView(this)
-            tvRatingBar.text = rating_value.toString()
+            var tvRatingBar: RatingBar = RatingBar(this)
+            tvRatingBar.numStars = 5
+            tvRatingBar.stepSize = 1f
+            tvRatingBar.rating = rating_value.toFloat()
+
+            val layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            layoutParams.gravity = Gravity.CENTER
+            tvRatingBar.layoutParams = layoutParams
+
+            tvRatingBar.isEnabled = false
             layout_item.addView(tvRatingBar)
 
             layout_item.setOnClickListener{
