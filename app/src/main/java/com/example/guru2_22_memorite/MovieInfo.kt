@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.TextView
@@ -14,6 +16,26 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 class MovieInfo : AppCompatActivity() {
+
+    //menu bar
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.info_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId) {
+            R.id.action_home -> {
+                val intent = Intent(this, MovieCalendar::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_list -> {
+                val intent = Intent(this, MovieList::class.java)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
