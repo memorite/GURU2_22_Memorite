@@ -128,14 +128,6 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/btnHome"
-            style="@style/customButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="홈" />
-
-        <Button
             android:id="@+id/btnEdit"
             style="@style/customButtonStyle"
             android:layout_width="wrap_content"
