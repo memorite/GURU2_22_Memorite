@@ -159,7 +159,7 @@
 
         <Button
             android:id="@+id/edit_save"
-            style="@style/customButtonFontStyle"
+            style="@style/customButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="수정완료" />
