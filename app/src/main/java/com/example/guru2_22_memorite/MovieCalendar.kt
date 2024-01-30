@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -15,23 +17,6 @@ import java.util.Calendar
 import java.util.Locale
 
 class MovieCalendar : AppCompatActivity() {
-
-//    lateinit var SelectButton : Button
-//
-//    @SuppressLint("MissingInflatedId")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_movie_calendar)
-//
-//        // 선택 버튼
-//        SelectButton = findViewById<Button>(R.id.SelectButton)
-//
-//        SelectButton.setOnClickListener {
-//            val intent = Intent(this,MovieRegister::class.java)
-//            startActivity(intent)
-//        }
-//    }
-//}
 
     private lateinit var dbManager: DBManager
     lateinit var SelectButton: Button
@@ -58,6 +43,18 @@ class MovieCalendar : AppCompatActivity() {
             val intent = Intent(this, MovieRegister::class.java)
             startActivity(intent)
         }
+
+        logTextView.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                updateTextViewBackGround(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
     }
 
     // 목록으로 이동(영화)
@@ -75,7 +72,7 @@ class MovieCalendar : AppCompatActivity() {
     private fun getLogContent(date: String): String {
         val cursor = dbManager.readableDatabase.query(
             "Movie",
-            arrayOf("memo"),
+            arrayOf("title"),
             "date = ?",
             arrayOf(date),
             null, null, null
@@ -84,7 +81,7 @@ class MovieCalendar : AppCompatActivity() {
         var logContent = ""
 
         if (cursor.moveToFirst()) {
-            val memoIndex = cursor.getColumnIndex("memo")
+            val memoIndex = cursor.getColumnIndex("title")
             val memoValue = cursor.getString(memoIndex)
             logContent = memoValue ?: ""
         }
@@ -92,5 +89,13 @@ class MovieCalendar : AppCompatActivity() {
         cursor.close()
 
         return logContent
+    }
+
+    private fun updateTextViewBackGround(text: String) {
+        if (text.isNotEmpty()) {
+            logTextView.setBackgroundResource(R.color.thema_green)
+        } else{
+            logTextView.setBackgroundResource(android.R.color.transparent)
+        }
     }
 }
