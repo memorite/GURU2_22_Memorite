@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/action_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/action_search"
+        android:title="@string/action_home"
         app:showAsAction="always" />
 
 
