@@ -120,6 +120,7 @@ class MovieCalendar : AppCompatActivity() {
     }
 
     // 뒤로가기 두 번 눌러야 앱 종료
+    @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {
         if(doubleBackToExit){
             finishAffinity()
