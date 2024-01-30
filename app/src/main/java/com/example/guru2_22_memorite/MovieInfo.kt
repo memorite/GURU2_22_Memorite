@@ -114,10 +114,10 @@ class MovieInfo : AppCompatActivity() {
         btnDelete.setOnClickListener {
             DeleteDialog()
         }
-        btnHome.setOnClickListener {
-            val intent = Intent(this, MovieCalendar::class.java)
-            startActivity(intent)
-        }
+//        btnHome.setOnClickListener {
+////            val intent = Intent(this, MovieCalendar::class.java)
+////            startActivity(intent)
+////        }
     }
         // 삭제 팝업창
         fun DeleteDialog() {
