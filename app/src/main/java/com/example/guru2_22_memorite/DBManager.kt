@@ -45,6 +45,31 @@ class DBManager(
         db.close()
         return result != 1L
     }
+    // 검색하기
+    fun searchMovies(query: String): List<Movie> {
+        val movies = mutableListOf<Movie>()
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM Movie WHERE title LIKE ? OR direc LIKE ? OR actor LIKE ? OR memo LIKE ?",
+            arrayOf("%$query%", "%$query%", "%$query%", "%$query%")
+        )
+
+        while (cursor.moveToNext()) {
+            val date = cursor.getString(cursor.getColumnIndex("date"))
+            val title = cursor.getString(cursor.getColumnIndex("title"))
+            val direc = cursor.getString(cursor.getColumnIndex("direc"))
+            val actor = cursor.getString(cursor.getColumnIndex("actor"))
+            val rating = cursor.getDouble(cursor.getColumnIndex("rating"))
+            val memo = cursor.getString(cursor.getColumnIndex("memo"))
+            val movie = Movie(date, title, direc, actor, rating, memo)
+            movies.add(movie)
+        }
+
+        cursor.close()
+        db.close()
+
+        return movies
+    }
 
     // 영화 수정
     fun updateMovie(
