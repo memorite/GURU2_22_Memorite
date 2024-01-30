@@ -66,6 +66,12 @@ class MovieEdit : AppCompatActivity() {
         sqlitedb.close()
         dbManager.close()
 
+        // str_date 초기화 추가 - 0130 5pm 추가된 부분
+        str_date = if (::str_date.isInitialized) str_date else ""
+        str_movie_direc = if (::str_movie_direc.isInitialized) str_movie_direc else ""
+        str_movie_actor = if (::str_movie_actor.isInitialized) str_movie_actor else ""
+        str_memo = if (::str_memo.isInitialized) str_memo else ""
+
         // 영화 정보를 EditText에 설정
         edit_date.setText(str_date)
         edit_movie_title.setText(str_movie_title)
