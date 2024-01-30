@@ -12,21 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GURU2_22_Memorite"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MovieList"
+            android:exported="false" />
         <activity
             android:name=".LodingActivity"
             android:exported="true"
             android:theme="@style/Theme.GURU2_22_Memorite.noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.GURU2_22_Memorite.noActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.GURU2_22_Memorite.noActionBar" />
         <activity
             android:name=".MemberRegisterActivity"
             android:exported="false" />
