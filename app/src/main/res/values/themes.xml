@@ -10,6 +10,7 @@
         <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
         <item name="android:radioButtonStyle">@style/customRadioButtonFontStyle</item>
         <item name="android:checkboxStyle">@style/customCheckBoxFontStyle</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Theme.GURU2_22_Memorite" parent="Base.Theme.GURU2_22_Memorite" />

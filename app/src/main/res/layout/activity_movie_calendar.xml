@@ -28,7 +28,8 @@
         app:backgroundTint="@color/theme_darkgreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:pressedTranslationZ="12dp" />
+        app:pressedTranslationZ="12dp"
+        app:tint="@color/white"/>
 
 
     <!--    <Button-->
