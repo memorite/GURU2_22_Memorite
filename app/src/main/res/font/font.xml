@@ -3,4 +3,13 @@
     <font android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/hssaemaul_regular"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/nanumsquareround_regular"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="500"
+        android:font="@font/nanumsquareround_bold"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/nanumsquareround_extrabold"/>
 </font-family>

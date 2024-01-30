@@ -3,9 +3,31 @@
     <style name="Base.Theme.GURU2_22_Memorite" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
+        <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
+        <item name="android:buttonStyle">@style/customButtonFontStyle</item>
+        <item name="android:radioButtonStyle">@style/customRadioButtonFontStyle</item>
+        <item name="android:checkboxStyle">@style/customCheckBoxFontStyle</item>
     </style>
 
     <style name="Theme.GURU2_22_Memorite" parent="Base.Theme.GURU2_22_Memorite" />
 
     <style name="Theme.GURU2_22_Memorite.noActionBar" parent="Theme.Material3.DayNight.NoActionBar"/>
+
+    <!--커스텀 폰트 관련-->
+    <style name="customTextViewFontStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/nanumsquareround_regular</item>
+    </style>
+    <style name="customEditTextFontStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/nanumsquareround_regular</item>
+    </style>
+    <style name="customButtonFontStyle" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/nanumsquareround_bold</item>
+    </style>
+    <style name="customRadioButtonFontStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/nanumsquareround_regular</item>
+    </style>
+    <style name="customCheckBoxFontStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/nanumsquareround_regular</item>
+    </style>
 </resources>

@@ -58,7 +58,7 @@
                 android:layout_weight="3"
                 android:backgroundTint="@color/white"
                 android:ems="10"
-                android:fontFamily="@font/hssaemaul_regular"
+                android:fontFamily="@font/nanumsquareround_regular"
                 android:inputType="text"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
@@ -89,7 +89,7 @@
                 android:layout_weight="3"
                 android:backgroundTint="@color/white"
                 android:ems="10"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/nanumsquareround_regular"
                 android:inputType="textPassword"
                 android:textAlignment="viewStart"
                 android:textColor="@color/white"
@@ -126,6 +126,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquareround_regular"
             android:text="@string/login_register_ask_text"
             android:textAlignment="center"
             android:textColor="@color/white" />
@@ -135,6 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/nanumsquareround_regular"
             android:text="@string/login_register_button" />
     </LinearLayout>
 
