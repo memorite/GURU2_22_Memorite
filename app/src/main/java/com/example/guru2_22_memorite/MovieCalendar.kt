@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import java.lang.StringBuilder
 import java.text.SimpleDateFormat
 import java.time.Month
 import java.util.Calendar
@@ -89,17 +90,24 @@ class MovieCalendar : AppCompatActivity() {
             null, null, null
         )
 
-        var logContent = ""
+        var logContent = StringBuilder()
 
-        if (cursor.moveToFirst()) {
-            val memoIndex = cursor.getColumnIndex("title")
-            val memoValue = cursor.getString(memoIndex)
-            logContent = memoValue ?: ""
+        while (cursor.moveToNext()) {
+            val titleIndex = cursor.getColumnIndex("title")
+            val titleValue = cursor.getString(titleIndex)
+            logContent.append("$titleValue\n")
         }
+//        }
+//
+//        if (cursor.moveToFirst()) {
+//            val memoIndex = cursor.getColumnIndex("title")
+//            val memoValue = cursor.getString(memoIndex)
+//            logContent = memoValue ?: ""
+//        }
 
         cursor.close()
 
-        return logContent
+        return logContent.toString().trim()
     }
 
     private fun updateTextViewBackGround(text: String) {

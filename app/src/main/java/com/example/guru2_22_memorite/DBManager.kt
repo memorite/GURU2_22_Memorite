@@ -1,4 +1,5 @@
 package com.example.guru2_22_memorite
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -28,6 +29,21 @@ class DBManager(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+    }
+
+    fun addMovie(movie: Movie): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put("date", movie.str_date)
+            put("title", movie.str_title)
+            put("direc", movie.str_direc)
+            put("actor", movie.str_actor)
+            put("rating", movie.rating)
+            put("memo", movie.memo)
+        }
+        val result = db.insert("Movie", null, values)
+        db.close()
+        return result != 1L
     }
 
     // 영화 수정
@@ -61,5 +77,36 @@ class DBManager(
         val result = db.delete("Movie", "title = ?", arrayOf(title))
         db.close()
         return result > 0
+    }
+
+
+    // 특정 날짜의 영화 가져오기
+    @SuppressLint("Range")
+    fun getMoviesByDate(date: String): List<Movie> {
+        val movies = mutableListOf<Movie>()
+        val db = readableDatabase
+        val cursor = db.query(
+            "Movie",
+            arrayOf("title", "direc", "actor", "rating", "memo"),
+            "date = ?",
+            arrayOf(date),
+            null, null, null
+        )
+
+        while (cursor.moveToNext()) {
+            val title = cursor.getString(cursor.getColumnIndex("title"))
+            val direc = cursor.getString(cursor.getColumnIndex("direc"))
+            val actor = cursor.getString(cursor.getColumnIndex("actor"))
+            val rating = cursor.getDouble(cursor.getColumnIndex("rating"))
+            val memo = cursor.getString(cursor.getColumnIndex("memo"))
+
+            val movie = Movie(date, title, direc, actor, rating, memo)
+            movies.add(movie)
+        }
+
+        cursor.close()
+        db.close()
+
+        return movies
     }
 }

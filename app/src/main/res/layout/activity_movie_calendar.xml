@@ -51,11 +51,12 @@
     <TextView
         android:id="@+id/logTextView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="@color/thema_green"
         android:text=""
         android:textSize="30sp"
         android:gravity="center"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="@+id/CalendarView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/CalendarView"
