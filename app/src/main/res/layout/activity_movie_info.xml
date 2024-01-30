@@ -41,10 +41,10 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="60sp"
+                    android:layout_width="80sp"
                     android:layout_height="wrap_content"
                     android:text="영화 제목"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/reg_movie_title"
@@ -129,6 +129,7 @@
 
         <Button
             android:id="@+id/btnHome"
+            style="@style/customButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -136,6 +137,7 @@
 
         <Button
             android:id="@+id/btnEdit"
+            style="@style/customButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -143,6 +145,7 @@
 
         <Button
             android:id="@+id/btnDelete"
+            style="@style/customButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

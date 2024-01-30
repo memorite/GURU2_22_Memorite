@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Menu
@@ -11,6 +13,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
@@ -24,6 +27,8 @@ class MovieCalendar : AppCompatActivity() {
     lateinit var SelectButton: FloatingActionButton
     lateinit var calendarView: CalendarView
     lateinit var logTextView: TextView
+
+    private var doubleBackToExit = false        // 뒤로가기 두번 눌러야 앱 종료
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -109,6 +114,22 @@ class MovieCalendar : AppCompatActivity() {
         cursor.close()
 
         return logContent.toString().trim()
+    }
+
+    // 뒤로가기 두 번 눌러야 앱 종료
+    override fun onBackPressed() {
+        if(doubleBackToExit){
+            finishAffinity()
+        } else {
+            Toast.makeText(this, "앱을 종료하려면 뒤로가기를 한번 더 눌러주세요.", Toast.LENGTH_SHORT).show()
+            doubleBackToExit = true
+            runDelayed(1500L){
+                doubleBackToExit = false
+            }
+        }
+    }
+    fun runDelayed(millis: Long, function: () -> Unit) {
+        Handler(Looper.getMainLooper()).postDelayed(function, millis)
     }
 
     private fun updateTextViewBackGround(text: String) {
