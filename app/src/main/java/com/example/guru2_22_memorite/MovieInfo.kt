@@ -50,7 +50,7 @@ class MovieInfo : AppCompatActivity() {
         tvMemo = findViewById(R.id.reg_memo)
         btnEdit = findViewById(R.id.btnEdit)
         btnDelete = findViewById(R.id.btnDelete)
-        btnHome = findViewById(R.id.btnHome)
+        //btnHome = findViewById(R.id.btnHome)
 
         //Intent를 통해 영화정보를 전달 받음
         val intent = intent
