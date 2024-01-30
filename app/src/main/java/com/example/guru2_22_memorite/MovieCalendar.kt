@@ -79,6 +79,8 @@ class MovieCalendar : AppCompatActivity() {
             }
             R.id.action_list -> {
                 val intent = Intent(this, MovieList::class.java)
+                startActivity(intent)
+                return true
             }
         }
         return super.onOptionsItemSelected(item)
