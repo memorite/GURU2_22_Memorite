@@ -1,5 +1,6 @@
 package com.example.guru2_22_memorite
 
+import android.app.DatePickerDialog
 import android.content.ContentValues
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
@@ -8,13 +9,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class MovieRegister : AppCompatActivity() {
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
-    lateinit var reg_date: EditText
+    lateinit var reg_date: TextView
     lateinit var reg_movie_title: EditText
     lateinit var reg_movie_direc: EditText
     lateinit var reg_movie_actor: EditText
@@ -39,6 +44,30 @@ class MovieRegister : AppCompatActivity() {
         }
 
         dbManager = DBManager(this,"MovieDB", null, 1)
+
+        // 날짜 입력 부분을 수정하여 캘린더에서 선택한 날짜를 사용하도록 함
+
+        reg_date.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+
+            val datePicker = DatePickerDialog(
+                this,
+                { _, year, monthOfYear, dayOfMonth ->
+                    val selectedDate = Calendar.getInstance()
+                    selectedDate.set(year, monthOfYear, dayOfMonth)
+
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    reg_date.text = dateFormat.format(selectedDate.time) // 선택한 날짜를 TextView에 표시
+                },
+                year,
+                month,
+                dayOfMonth
+            )
+            datePicker.show()
+        }
 
         //저장버튼 클릭시 데이터 저장
         btnSave.setOnClickListener {
