@@ -44,7 +44,8 @@
                     android:layout_width="80sp"
                     android:layout_height="wrap_content"
                     android:text="영화 제목"
-                    android:textSize="16sp" />
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:id="@+id/reg_movie_title"
@@ -52,7 +53,9 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -64,13 +67,16 @@
                     android:layout_height="wrap_content"
                     android:text="감독"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:id="@+id/reg_movie_direc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:text=""
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -82,19 +88,21 @@
                     android:layout_height="wrap_content"
                     android:text="배우"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:id="@+id/reg_movie_actor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:text=""
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp">
 
                 <RatingBar
@@ -109,18 +117,19 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/reg_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:gravity="start|top"
-            android:scrollbars="vertical"/>
-    </ScrollView>
+            android:inputType="text"
+            android:textSize="17sp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
