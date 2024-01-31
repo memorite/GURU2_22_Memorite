@@ -106,6 +106,14 @@ class MovieInfo : AppCompatActivity() {
         // 수정 버튼 클릭시 MovieEdit로 이동
         btnEdit.setOnClickListener {
             val intent = Intent(this, MovieEdit::class.java)
+
+            // Intent에 선택한 영화의 정보 전달
+            intent.putExtra("intent_date", str_movie_date)
+            intent.putExtra("intent_title", str_movie_title)
+            intent.putExtra("intent_direc", str_movie_direc)
+            intent.putExtra("intent_actor", str_movie_actor)
+            intent.putExtra("intent_rating", rating_value)
+            intent.putExtra("intent_memo", str_memo)
             startActivity(intent)
         }
         // 삭제 버튼 클릭시 팝업창
