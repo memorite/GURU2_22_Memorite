@@ -137,22 +137,27 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="300dp">
 
-        <EditText
-            android:id="@+id/edit_memo"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:hint="메모를 남겨보세요"
-            android:inputType="textMultiLine"
-            android:gravity="start|top"
-            android:maxLines="10"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/edit_memo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:gravity="start|top"
+                android:hint="메모를 남겨보세요"
+                android:inputType="textMultiLine"
+                android:lineSpacingMultiplier="1.2" />
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
