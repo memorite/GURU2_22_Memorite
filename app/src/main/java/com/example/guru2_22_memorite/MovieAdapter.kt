@@ -18,7 +18,7 @@ class MovieAdapter(context: Context, resource: Int, private val movies: List<Mov
         val itemView = LayoutInflater.from(context).inflate(R.layout.custom_list_item, parent, false)
 
         // 각 항목을 원하는 형태로 표시
-        val displayText = "${movie.str_date} < ${movie.str_title} >"
+        val displayText = "${movie.str_date}\n< ${movie.str_title} >"
         val textView = itemView.findViewById<TextView>(R.id.customItemTextView)
         textView.text = displayText
 
