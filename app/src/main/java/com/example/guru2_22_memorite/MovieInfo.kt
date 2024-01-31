@@ -39,12 +39,12 @@ class MovieInfo : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        // 액티비티가 다시 시작될 때마다 영화 정보를 다시 불러옴
-        loadMovieInfo()
-    }
+//    override fun onResume() {
+//        super.onResume()
+//
+//        // 액티비티가 다시 시작될 때마다 영화 정보를 다시 불러옴
+//        loadMovieInfo()
+//    }
 
 
     lateinit var dbManager: DBManager
@@ -61,12 +61,12 @@ class MovieInfo : AppCompatActivity() {
     lateinit var btnEdit: Button
     lateinit var btnDelete: Button
 
-    lateinit var str_movie_date: String
-    lateinit var str_movie_title: String
-    lateinit var str_movie_direc: String
-    lateinit var str_movie_actor: String
+    var str_movie_date: String = ""
+    var str_movie_title: String = ""
+    var str_movie_direc: String = ""
+    var str_movie_actor: String = ""
     var rating_value: Double = 0.0
-    lateinit var str_memo: String
+    var str_memo: String = ""
 
     @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -129,34 +129,34 @@ class MovieInfo : AppCompatActivity() {
             DeleteDialog()
         }
     }
-
-    // 영화 정보를 불러오는 도우미 함수
-    @SuppressLint("Range")
-    private fun loadMovieInfo() {
-        dbManager = DBManager(this, "MovieDB", null, 1)
-        sqlitedb = dbManager.readableDatabase
-
-        var cursor: Cursor
-        cursor = sqlitedb.rawQuery("SELECT * FROM Movie WHERE title = '$str_movie_title';", null)
-        if (cursor.moveToNext()) {
-            str_movie_date = cursor.getString((cursor.getColumnIndex("date"))).toString()
-            str_movie_direc = cursor.getString((cursor.getColumnIndex("direc"))).toString()
-            str_movie_actor = cursor.getString((cursor.getColumnIndex("actor"))).toString()
-            rating_value = cursor.getDouble((cursor.getColumnIndex("rating")))
-            str_memo = cursor.getString((cursor.getColumnIndex("memo"))).toString()
-        }
-        cursor.close()
-        sqlitedb.close()
-        dbManager.close()
-
-        // 불러온 영화 정보로 UI를 업데이트
-        tvMovieDate.text = str_movie_date
-        tvMovieTitle.text = str_movie_title
-        tvMovieDirec.text = str_movie_direc
-        tvMovieActor.text = str_movie_actor
-        ratingBarInfo.rating = rating_value.toFloat()
-        tvMemo.text = str_memo + "\n"
-    }
+//
+//    // 영화 정보를 불러오기
+//    @SuppressLint("Range")
+//    private fun loadMovieInfo() {
+//        dbManager = DBManager(this, "MovieDB", null, 1)
+//        sqlitedb = dbManager.readableDatabase
+//
+//        var cursor: Cursor
+//        cursor = sqlitedb.rawQuery("SELECT * FROM Movie WHERE title = '$str_movie_title';", null)
+//        if (cursor.moveToNext()) {
+//            str_movie_date = cursor.getString((cursor.getColumnIndex("date"))).toString()
+//            str_movie_direc = cursor.getString((cursor.getColumnIndex("direc"))).toString()
+//            str_movie_actor = cursor.getString((cursor.getColumnIndex("actor"))).toString()
+//            rating_value = cursor.getDouble((cursor.getColumnIndex("rating")))
+//            str_memo = cursor.getString((cursor.getColumnIndex("memo"))).toString()
+//        }
+//        cursor.close()
+//        sqlitedb.close()
+//        dbManager.close()
+//
+//        // 불러온 영화 정보로 UI를 업데이트
+//        tvMovieDate.text = str_movie_date
+//        tvMovieTitle.text = str_movie_title
+//        tvMovieDirec.text = str_movie_direc
+//        tvMovieActor.text = str_movie_actor
+//        ratingBarInfo.rating = rating_value.toFloat()
+//        tvMemo.text = str_memo + "\n"
+//    }
 
     // 삭제 팝업창
     fun DeleteDialog() {

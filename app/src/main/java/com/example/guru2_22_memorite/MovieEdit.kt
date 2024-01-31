@@ -94,7 +94,20 @@ class MovieEdit : AppCompatActivity() {
         edit_save.setOnClickListener {
             saveMovieInfo()
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
-            finish() // 현재 액티비티 종료
+
+            // MovieInfo 액티비티로 이동하는 Intent 생성
+            val intent = Intent(this, MovieInfo::class.java)
+
+            // Intent에 선택한 영화의 정보 전달
+            intent.putExtra("intent_date", edit_date.text.toString())
+            intent.putExtra("intent_title", edit_movie_title.text.toString())
+            intent.putExtra("intent_direc", edit_movie_direc.text.toString())
+            intent.putExtra("intent_actor", edit_movie_actor.text.toString())
+            intent.putExtra("intent_rating", edit_ratingBar.rating)
+            intent.putExtra("intent_memo", edit_memo.text.toString())
+
+            // MovieInfo 액티비티 시작
+            startActivity(intent)
         }
         // 날짜 입력 부분을 수정하여 캘린더에서 선택한 날짜를 사용하도록 함
         edit_date.setOnClickListener {
