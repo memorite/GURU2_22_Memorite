@@ -3,10 +3,13 @@ package com.example.guru2_22_memorite
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.ContentValues
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
@@ -77,6 +80,7 @@ class MovieEdit : AppCompatActivity() {
         str_movie_actor = if (::str_movie_actor.isInitialized) str_movie_actor else ""
         str_memo = if (::str_memo.isInitialized) str_memo else ""
 
+
         // 영화 정보를 EditText에 설정
         edit_date.setText(str_date)
         edit_movie_title.setText(str_movie_title)
@@ -84,6 +88,7 @@ class MovieEdit : AppCompatActivity() {
         edit_movie_actor.setText(str_movie_actor)
         edit_ratingBar.rating = rating_value.toFloat()
         edit_memo.setText(str_memo)
+
 
         // 수정완료 클릭시 수정된 정보를 DB에 저장
         edit_save.setOnClickListener {
@@ -113,6 +118,27 @@ class MovieEdit : AppCompatActivity() {
             )
             datePicker.show()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.edit_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId) {
+            R.id.action_home -> {
+                val intent = Intent(this, MovieCalendar::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_list -> {
+                val intent = Intent(this, MovieList::class.java)
+                startActivity(intent)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun saveMovieInfo() {
