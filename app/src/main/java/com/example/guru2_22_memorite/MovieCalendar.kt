@@ -35,22 +35,31 @@ class MovieCalendar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_calendar)
 
+        // 데이터베이스 관리자 초기화
         dbManager = DBManager(this, "MovieDB", null, 1)
+
+        // 뷰 초기화
         calendarView = findViewById(R.id.CalendarView)
         logTextView = findViewById(R.id.logTextView)
         SelectButton = findViewById(R.id.SelectButton)
 
+        // TextView의 백그라운드 초기화
+        updateTextViewBackGround("")
+
+        // 캘린더뷰 리스너 설정
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val selectedDate = getDate(year, month, dayOfMonth)
             val logContent = getLogContent(selectedDate)
             logTextView.text = logContent
         }
 
+        // 플로팅 액션 버튼 리스너 설정
         SelectButton.setOnClickListener {
             val intent = Intent(this, MovieRegister::class.java)
             startActivity(intent)
         }
 
+        // TextView 백그라운드 설정
         logTextView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
@@ -64,7 +73,7 @@ class MovieCalendar : AppCompatActivity() {
         })
     }
 
-    // 목록으로 이동(영화)
+    // 메뉴바 설정
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.calendar_movie_menu, menu)
         return true
@@ -86,12 +95,14 @@ class MovieCalendar : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    // 년월일을 문자열로 변환
     private fun getDate(year: Int, month: Int, dayOfMonth: Int): String {
         val calendar = Calendar.getInstance()
         calendar.set(year, month, dayOfMonth)
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         return sdf.format(calendar.time)
     }
+    // 선택한 날짜에 해당하는 로그 내용 가져오기
     private fun getLogContent(date: String): String {
         val cursor = dbManager.readableDatabase.query(
             "Movie",
@@ -138,6 +149,7 @@ class MovieCalendar : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed(function, millis)
     }
 
+    // TextView의 백그라운드 업데이트
     private fun updateTextViewBackGround(text: String) {
         if (text.isNotEmpty()) {
             logTextView.setBackgroundResource(R.color.theme_green)
