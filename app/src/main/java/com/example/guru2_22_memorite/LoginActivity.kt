@@ -36,8 +36,11 @@ class LoginActivity : AppCompatActivity() {
 
         // 로그인
         btnLogin.setOnClickListener {
-            var login_id = edtID.text.toString()
-            var login_pw = edtPassword.text.toString()
+            var login_id:String = ""
+            var login_pw:String = ""
+
+            login_id = edtID.text.toString()
+            login_pw = edtPassword.text.toString()
 
             // 유저 정보 db에서 로그인 정보가 맞는지 체크
             sqlitedb = dbManager.readableDatabase
@@ -49,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                 cursor.close()
             }
 
-            if(data_pw.equals(login_pw)){
+            if(data_pw.equals(login_pw) && login_pw != ""){
                 // 일치할 경우 로그인
                 val intent = Intent(this, MovieCalendar::class.java)
                 intent.putExtra("id", login_id)
