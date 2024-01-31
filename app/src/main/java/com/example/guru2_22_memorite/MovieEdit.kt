@@ -34,12 +34,12 @@ class MovieEdit : AppCompatActivity() {
     lateinit var edit_memo: EditText
     lateinit var edit_save: Button
 
-    var str_date: String = ""
-    var str_movie_title: String = ""
-    var str_movie_direc: String = ""
-    var str_movie_actor: String = ""
+    lateinit var str_date: String
+    lateinit var str_movie_title: String
+    lateinit var str_movie_direc: String
+    lateinit var str_movie_actor: String
     var rating_value: Double = 0.0
-    var str_memo: String = ""
+    lateinit var str_memo: String
 
     @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,12 +53,6 @@ class MovieEdit : AppCompatActivity() {
         edit_ratingBar = findViewById(R.id.edit_ratingBar)
         edit_memo = findViewById(R.id.edit_memo)
         edit_save = findViewById(R.id.edit_save)
-
-//        // str_date 초기화 추가 - 0130 5pm 추가된 부분
-//        str_date = if (::str_date.isInitialized) str_date else ""
-//        str_movie_direc = if (::str_movie_direc.isInitialized) str_movie_direc else ""
-//        str_movie_actor = if (::str_movie_actor.isInitialized) str_movie_actor else ""
-//        str_memo = if (::str_memo.isInitialized) str_memo else ""
 
         // MovieInfo에서 전달받은 영화정보
         val intent = intent
@@ -80,11 +74,11 @@ class MovieEdit : AppCompatActivity() {
         sqlitedb.close()
         dbManager.close()
 
-//        // str_date 초기화 추가 - 0130 5pm 추가된 부분
-//        str_date = if (::str_date.isInitialized) str_date else ""
-//        str_movie_direc = if (::str_movie_direc.isInitialized) str_movie_direc else ""
-//        str_movie_actor = if (::str_movie_actor.isInitialized) str_movie_actor else ""
-//        str_memo = if (::str_memo.isInitialized) str_memo else ""
+        // str_date 초기화 추가
+        str_date = if (::str_date.isInitialized) str_date else ""
+        str_movie_direc = if (::str_movie_direc.isInitialized) str_movie_direc else ""
+        str_movie_actor = if (::str_movie_actor.isInitialized) str_movie_actor else ""
+        str_memo = if (::str_memo.isInitialized) str_memo else ""
 
 
         // 영화 정보를 EditText에 설정
