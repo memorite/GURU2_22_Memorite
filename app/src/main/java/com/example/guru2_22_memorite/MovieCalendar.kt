@@ -119,13 +119,6 @@ class MovieCalendar : AppCompatActivity() {
             val titleValue = cursor.getString(titleIndex)
             logContent.append("$titleValue\n")
         }
-//        }
-//
-//        if (cursor.moveToFirst()) {
-//            val memoIndex = cursor.getColumnIndex("title")
-//            val memoValue = cursor.getString(memoIndex)
-//            logContent = memoValue ?: ""
-//        }
 
         cursor.close()
 

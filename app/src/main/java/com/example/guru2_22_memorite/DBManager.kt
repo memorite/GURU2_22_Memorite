@@ -46,6 +46,7 @@ class DBManager(
         return result != 1L
     }
     // 검색하기
+    @SuppressLint("Range")
     fun searchMovies(query: String): List<Movie> {
         val movies = mutableListOf<Movie>()
         val db = readableDatabase

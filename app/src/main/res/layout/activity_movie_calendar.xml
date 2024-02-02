@@ -32,17 +32,6 @@
         app:tint="@color/white"/>
 
 
-    <!--    <Button-->
-    <!--        android:id="@+id/SelectButton"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="30dp"-->
-    <!--        android:layout_marginEnd="160dp"-->
-    <!--        android:text="선택"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/logTextView"-->
-    <!--        tools:ignore="MissingConstraints" />-->
-
     <TextView
         android:id="@+id/LogText"
         android:layout_width="wrap_content"
