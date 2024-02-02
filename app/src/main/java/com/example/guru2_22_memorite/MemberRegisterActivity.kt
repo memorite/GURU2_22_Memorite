@@ -56,14 +56,17 @@ class MemberRegisterActivity : AppCompatActivity() {
 
             sqlitedb = dbManager.readableDatabase
 
+            // db에 동일한 id가 이미 등록되어있는지 확인
             var cursor: Cursor
             cursor = sqlitedb.rawQuery("SELECT COUNT(*) FROM userList where id = '" + id + "';", null)
 
             cursor.moveToFirst()
             if(cursor == null || cursor.getInt(0) == 0){
+                // 검색 결과가 없다면(등록되지 않았다면) id체크를 수행했음을 알리고 사용 가능한 id임을 표시
                 idChecked = true
                 textIDCheck.setText("사용 가능한 ID입니다.")
             } else {
+                // 검색 결과가 있다면(등록되어 있다면) id 체크를 다시 해야 함을 알리고 중복되었음을 표시
                 idChecked = false
                 textIDCheck.setText("ID가 중복되었습니다.")
             }
